@@ -1,0 +1,1561 @@
+/* =====================================================
+           配色 Design Tokens ── 清新日系（抹茶 × 白練）
+           深松綠  #2e4639  主色（原墨褐 #1a1208）
+           抹茶綠  #87a96b  強調色（原金 #c9a84c）
+           淺抹茶  #9dbd82  hover（原 #e8c060）
+           白練    #f7f8f2  主背景（原米白 #f5f0e8）
+           淡若葉  #eaf0e3  次背景（原 #ede8dc）
+           灰綠    #45584a  內文 ／ #7c907a 弱化文字
+           ===================================================== */
+
+        /* ===== 動畫全域設定（WOW.js + animate.css）===== */
+
+        :root {
+            --animate-duration: 0.9s;
+            /* 統一節奏，比 animate.css 預設 1s 略快，收斂不拖沓 */
+            --animate-delay: 0.15s;
+        }
+
+        /* fadeInLeft / fadeInRight 等位移類動畫，先擋掉可能產生的橫向捲軸 */
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        /* fallback：JS 若載入失敗，內容仍看得到（WOW 會用 inline style 蓋掉這行） */
+        .wow {
+            visibility: visible;
+        }
+
+        /* 尊重使用者的系統偏好，關閉動畫 */
+        @media (prefers-reduced-motion: reduce) {
+
+            .wow,
+            .animate__animated {
+                animation: none !important;
+                visibility: visible !important;
+            }
+        }
+
+        /* ===== registerModal 自訂風格 ===== */
+
+        /* 背景遮罩加深，搭配深松綠 */
+        #rigisterModal .modal-dialog {
+            max-width: 720px;
+        }
+
+        #rigisterModal .modal-content {
+            border: 1px solid #87a96b;
+            border-radius: 2px;
+            background: #f7f8f2;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #2e4639;
+            overflow: hidden;
+        }
+
+        /* ── Header ── */
+        #rigisterModal .modal-header {
+            background: #2e4639;
+            border-bottom: 2px solid #87a96b;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cha-stamp {
+            width: 38px;
+            height: 38px;
+            border: 2px solid #87a96b;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: #87a96b;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .cha-title-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .cha-title-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: #f7f8f2;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        .cha-title-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 11px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 2px;
+        }
+
+        #rigisterModal .btn-close {
+            filter: invert(70%) sepia(20%) saturate(400%) hue-rotate(60deg);
+            opacity: 0.6;
+            margin-left: auto;
+        }
+
+        #rigisterModal .btn-close:hover {
+            opacity: 1;
+        }
+
+        /* ── Body ── */
+        #rigisterModal .modal-body {
+            padding: 0;
+            background: #f7f8f2;
+        }
+
+        #rigisterModal .modal-body .row {
+            margin: 0;
+        }
+
+        /* 左欄：條款 */
+        .cha-terms-col {
+            padding: 1.4rem 1.25rem 1.4rem 1.5rem;
+            background: #eaf0e3;
+            border-right: 1px solid #d8e2cf;
+        }
+
+        .cha-section-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: #7c907a;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cha-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #87a96b;
+            opacity: 0.45;
+        }
+
+        .cha-terms-text {
+            font-size: 11.5px;
+            color: #45584a;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .cha-terms-text p {
+            margin: 0 0 9px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #d8e2cf;
+        }
+
+        .cha-terms-text p:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* 右欄：表單 */
+        .cha-form-col {
+            padding: 1.4rem 1.5rem 1.4rem 1.25rem;
+            background: #f7f8f2;
+        }
+
+        .cha-field {
+            margin-bottom: 11px;
+        }
+
+        .cha-label {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: #7c907a;
+            letter-spacing: 2.5px;
+            margin-bottom: 4px;
+        }
+
+        .cha-input {
+            width: 100%;
+            padding: 7px 10px;
+            background: #f7f8f2;
+            border: none;
+            border-bottom: 1px solid #87a96b;
+            border-radius: 0;
+            font-size: 13px;
+            color: #2e4639;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            box-sizing: border-box;
+        }
+
+        .cha-input:focus {
+            border-bottom-color: #2e4639;
+            background: #ffffff;
+        }
+
+        .cha-input::placeholder {
+            color: #a7bba0;
+            font-size: 12px;
+        }
+
+        /* Checkbox 行 */
+        .cha-check-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #d8e2cf;
+        }
+
+        .cha-check {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #87a96b;
+            background: #f7f8f2;
+            appearance: none;
+            -webkit-appearance: none;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .cha-check:checked {
+            background: #2e4639;
+        }
+
+        .cha-check:checked::after {
+            content: '✓';
+            position: absolute;
+            top: -1px;
+            left: 1px;
+            font-size: 11px;
+            color: #87a96b;
+        }
+
+        .cha-check-label {
+            font-size: 11px;
+            color: #45584a;
+            letter-spacing: 1px;
+            font-weight: 300;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* ===== Navbar 自訂配色 ===== */
+
+        .cha-navbar {
+            background-color: #2e4639 !important;
+            border-bottom: 1px solid #3c5a49;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+        }
+
+        .cha-navbar .navbar-brand {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #f7f8f2 !important;
+            letter-spacing: 3px;
+        }
+
+        .cha-navbar .navbar-brand:hover {
+            color: #87a96b !important;
+        }
+
+        .cha-navbar .nav-link {
+            font-size: 13px;
+            color: #b4c5ad !important;
+            letter-spacing: 1.5px;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .cha-navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 1px;
+            background: #87a96b;
+            transform: scaleX(0);
+            transition: transform 0.2s;
+        }
+
+        .cha-navbar .nav-link:hover,
+        .cha-navbar .nav-link.active {
+            color: #f7f8f2 !important;
+        }
+
+        .cha-navbar .nav-link:hover::after,
+        .cha-navbar .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        /* dropdown */
+        .cha-navbar .dropdown-menu {
+            background: #2e4639;
+            border: 1px solid #3c5a49;
+            border-top: 2px solid #87a96b;
+            border-radius: 0;
+            padding: 0.25rem 0;
+        }
+
+        .cha-navbar .dropdown-item {
+            font-size: 12px;
+            color: #b4c5ad;
+            letter-spacing: 1.5px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            padding: 0.5rem 1.25rem;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .cha-navbar .dropdown-item:hover,
+        .cha-navbar .dropdown-item.active,
+        .cha-navbar .dropdown-item:active {
+            background: #3c5a49;
+            color: #87a96b;
+        }
+
+        /* toggler */
+        .cha-navbar .navbar-toggler {
+            border-color: #4c6a58;
+        }
+
+        .cha-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2387a96b' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* 按鈕：註冊 */
+        .cha-btn-register {
+            background: #87a96b;
+            border: 1px solid #87a96b;
+            color: #2e4639;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 5px 16px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .cha-btn-register:hover {
+            background: #9dbd82;
+            border-color: #9dbd82;
+        }
+
+        /* 按鈕：登入 */
+        .cha-btn-login {
+            background: none;
+            border: 1px solid #87a96b;
+            color: #87a96b;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            padding: 5px 16px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .cha-btn-login:hover {
+            background: #87a96b;
+            color: #2e4639;
+        }
+
+        /* ── Footer ── */
+        #rigisterModal .modal-footer {
+            background: #2e4639;
+            border-top: 1px solid #3c5a49;
+            padding: 0.85rem 1.5rem;
+            gap: 8px;
+        }
+
+        .cha-btn-cancel {
+            background: none;
+            border: 1px solid #4c6a58;
+            color: #7c907a;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            padding: 6px 18px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .cha-btn-cancel:hover {
+            border-color: #7c907a;
+            color: #87a96b;
+        }
+
+        .cha-btn-confirm {
+            background: #87a96b;
+            border: 1px solid #87a96b;
+            color: #2e4639;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            padding: 6px 22px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cha-btn-confirm:hover {
+            background: #9dbd82;
+            border-color: #9dbd82;
+        }
+
+        /* ===== loginModal 自訂風格 ===== */
+
+        #loginModal .modal-dialog {
+            max-width: 380px;
+        }
+
+        #loginModal .modal-content {
+            border: 1px solid #87a96b;
+            border-radius: 2px;
+            background: #f7f8f2;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #2e4639;
+            overflow: hidden;
+        }
+
+        #loginModal .modal-header {
+            background: #2e4639;
+            border-bottom: 2px solid #87a96b;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cha-login-stamp {
+            width: 38px;
+            height: 38px;
+            border: 2px solid #87a96b;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: #87a96b;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        #loginModal .modal-body {
+            padding: 1.5rem 1.5rem 0.5rem;
+            background: #f7f8f2;
+        }
+
+        #loginModal .modal-footer {
+            background: #2e4639;
+            border-top: 1px solid #3c5a49;
+            padding: 0.85rem 1.5rem;
+            gap: 8px;
+        }
+
+        /* ===== Carousel 配色 ===== */
+
+        .cha-carousel {
+            position: relative;
+        }
+
+        /* 每張圖片疊翠綠漸層，統一色溫 */
+        .cha-carousel .carousel-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(46, 70, 57, 0.25) 0%,
+                    rgba(46, 70, 57, 0.05) 40%,
+                    rgba(46, 70, 57, 0.05) 60%,
+                    rgba(46, 70, 57, 0.45) 100%);
+            pointer-events: none;
+        }
+
+        /* indicators：抹茶綠細線，active 時加寬 */
+        .cha-carousel .carousel-indicators {
+            margin-bottom: 1.25rem;
+            gap: 6px;
+        }
+
+        .cha-carousel .carousel-indicators [data-bs-target] {
+            width: 28px;
+            height: 2px;
+            border-radius: 0;
+            background-color: rgba(135, 169, 107, 0.4);
+            border: none;
+            transition: background-color 0.3s, width 0.3s;
+            opacity: 1;
+        }
+
+        .cha-carousel .carousel-indicators .active {
+            background-color: #87a96b;
+            width: 44px;
+        }
+
+        /* 控制箭頭：松綠底框 + 抹茶框線 */
+        .cha-carousel .carousel-control-prev,
+        .cha-carousel .carousel-control-next {
+            width: 48px;
+            opacity: 1;
+        }
+
+        .cha-carousel .carousel-control-prev-icon,
+        .cha-carousel .carousel-control-next-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(46, 70, 57, 0.55);
+            border: 1px solid rgba(135, 169, 107, 0.5);
+            border-radius: 0;
+            background-size: 14px;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .cha-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+        .cha-carousel .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: rgba(46, 70, 57, 0.85);
+            border-color: #87a96b;
+        }
+
+        /* 圖片固定高度裁切，加微飽和度壓制 */
+        .cha-carousel .carousel-item img {
+            height: 520px;
+            object-fit: cover;
+            object-position: center;
+            filter: saturate(0.95) brightness(1.02);
+        }
+
+        /* ===== Section 4 | 品牌數據 ===== */
+
+        #s04 {
+            background: #f7f8f2;
+            overflow: hidden;
+        }
+
+        /* ── s04 數字 class 補齊（讓 counterUp 樣式生效） ── */
+        .s04-stat-number01,
+        .s04-stat-number02,
+        .s04-stat-number03,
+        .s04-stat-number04 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: #2e4639;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .s04-stat-number01 span,
+        .s04-stat-number02 span,
+        .s04-stat-number03 span,
+        .s04-stat-number04 span {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #7c907a;
+            letter-spacing: 1px;
+            margin-left: 2px;
+        }
+
+        /* 左欄圖片 */
+        #s04 .s04-img-col {
+            min-height: 520px;
+            background-image: url(https://images.pexels.com/photos/5946646/pexels-photo-5946646.jpeg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* 左欄圖片上的翠綠漸層（跟 carousel 統一） */
+        #s04 .s04-img-col::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(46, 70, 57, 0.0) 60%,
+                    rgba(46, 70, 57, 0.35) 100%);
+            pointer-events: none;
+        }
+
+        /* 右欄文字區 */
+        #s04 .s04-text-col {
+            padding: 4rem 3rem 3rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 小標籤 */
+        #s04 .s04-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        /* 主標題 */
+        #s04 .s04-year {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #7c907a;
+            letter-spacing: 4px;
+            margin-bottom: 4px;
+        }
+
+        #s04 .s04-headline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: #2e4639;
+            letter-spacing: 6px;
+            line-height: 1.2;
+            margin: 0 0 16px;
+        }
+
+        /* 分隔線 */
+        #s04 .s04-divider {
+            width: 40px;
+            height: 2px;
+            background: #87a96b;
+            margin-bottom: 20px;
+        }
+
+        /* 副文案 */
+        #s04 .s04-award {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #45584a;
+            letter-spacing: 2px;
+            line-height: 2;
+            margin: 0 0 6px;
+            padding-left: 12px;
+            border-left: 2px solid #87a96b;
+        }
+
+        /* 數字區塊列 */
+        #s04 .s04-stats-row {
+            border-top: 1px solid #d8e2cf;
+            padding-top: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        #s04 .s04-stat {
+            padding: 0 1rem 0 0;
+        }
+
+        #s04 .s04-stat-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            font-weight: 400;
+            color: #7c907a;
+            letter-spacing: 2.5px;
+            margin-bottom: 6px;
+        }
+
+        #s04 .s04-stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: #2e4639;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        #s04 .s04-stat-number span {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #7c907a;
+            letter-spacing: 1px;
+            margin-left: 2px;
+        }
+
+        /* ── s05 區塊標題 ── */
+        .s05-main-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #f7f8f2;
+            letter-spacing: 6px;
+            margin-bottom: 4px;
+        }
+
+        .s05-main-title-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+        }
+
+        .s05-main-divider {
+            width: 40px;
+            height: 1px;
+            background: #87a96b;
+            margin: 16px auto 60px;
+        }
+
+        /* ── 單一步驟 ── */
+        .s05-step-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 11px;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        .s05-step-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #f7f8f2;
+            letter-spacing: 3px;
+            margin: 0 0 10px;
+            padding-left: 14px;
+            border-left: 2px solid #87a96b;
+        }
+
+        .s05-divider {
+            width: 28px;
+            height: 1px;
+            background: #87a96b;
+            margin: 0 0 14px 14px;
+            opacity: 0.6;
+        }
+
+        .s05-step-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #b4c5ad;
+            line-height: 2;
+            letter-spacing: 0.5px;
+            padding-left: 14px;
+            margin: 0;
+        }
+
+        /* ── 圖片 ── */
+        .s05-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.9) brightness(1.02);
+            border: 1px solid rgba(135, 169, 107, 0.3);
+        }
+
+        /* ── 步驟分隔線 ── */
+        .s05-row-divider {
+            border: none;
+            border-top: 1px solid rgba(135, 169, 107, 0.15);
+            margin: 3rem 0;
+        }
+
+        /* 深綠遮罩，壓住木紋讓文字清晰 */
+        #s05::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(46, 70, 57, 0.80);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #s05 .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .s05-timeline-section {
+            position: relative;
+        }
+
+        .s05-timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: rgba(216, 226, 207, 0.9);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .s05-timeline-pointer {
+            position: relative;
+        }
+
+        .s05-timeline-pointer::before {
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 12px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: #87a96b;
+            border: 2px solid #f7f8f2;
+            left: 50%;
+            z-index: 2;
+        }
+
+        /* ── s06 區塊標題 ── */
+        #s06 .s06-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s06 .s06-main-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #2e4639;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+        }
+
+        #s06 .s06-main-divider {
+            width: 40px;
+            height: 1px;
+            background: #87a96b;
+            margin: 0 auto 3.5rem;
+        }
+
+        /* ── 單欄 ── */
+        #s06 .s06-col {
+            padding: 1.5rem 2.5rem;
+            border-right: 1px solid #d8e2cf;
+        }
+
+        #s06 .s06-col:last-child {
+            border-right: none;
+        }
+
+        #s06 .s06-icon {
+            color: #87a96b;
+            margin-bottom: 1.25rem;
+        }
+
+        #s06 .s06-icon-divider {
+            width: 24px;
+            height: 1px;
+            background: #87a96b;
+            margin: 0 auto 1rem;
+            opacity: 0.6;
+        }
+
+        #s06 .s06-card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #2e4639;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        #s06 .s06-card-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12.5px;
+            font-weight: 300;
+            color: #45584a;
+            line-height: 2;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* ── s07 左欄圖片遮罩 ── */
+        #s07 .s07-img-col::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(234, 240, 227, 0.0) 55%,
+                    rgba(234, 240, 227, 0.9) 100%);
+            pointer-events: none;
+        }
+
+        /* ── s07 右欄文字 ── */
+        #s07 .s07-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s07 .s07-headline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #2e4639;
+            letter-spacing: 4px;
+            margin: 0 0 12px;
+        }
+
+        #s07 .s07-divider {
+            width: 32px;
+            height: 1px;
+            background: #87a96b;
+            margin-bottom: 20px;
+        }
+
+        #s07 .s07-body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #45584a;
+            line-height: 2.2;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        #s07 .s07-sub-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #87a96b;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            padding-left: 10px;
+            border-left: 2px solid #87a96b;
+        }
+
+        #s07 .s07-sub-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #7c907a;
+            line-height: 2;
+            letter-spacing: 0.5px;
+            padding-left: 12px;
+        }
+
+        #s07 .s07-text-col {
+            padding: 4rem 2rem 4rem 3rem;
+        }
+
+        /* ── s08 區塊標題 ── */
+        #s08 .s08-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s08 .s08-main-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #f7f8f2;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+        }
+
+        #s08 .s08-main-divider {
+            width: 40px;
+            height: 1px;
+            background: #87a96b;
+            margin: 0 auto 3.5rem;
+        }
+
+        #s08 .s08-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(135, 169, 107, 0.25);
+            padding: 1.75rem 1.5rem;
+            transition: transform 0.25s, border-color 0.25s;
+            height: 100%;
+        }
+
+        #s08 .s08-card:hover {
+            transform: translateY(-4px);
+            border-color: #87a96b;
+        }
+
+        /* 黑卡專屬：抹茶邊框加強 + 底部柔光 */
+        #s08 .s08-card-elite {
+            background: rgba(135, 169, 107, 0.06);
+            border: 1px solid rgba(135, 169, 107, 0.6);
+            box-shadow: 0 0 24px rgba(135, 169, 107, 0.08);
+        }
+
+        #s08 .s08-card-elite:hover {
+            border-color: #9dbd82;
+            box-shadow: 0 0 32px rgba(135, 169, 107, 0.15);
+        }
+
+        #s08 .s08-icon-wrap {
+            width: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 3px;
+        }
+
+        #s08 .s08-icon {
+            color: #87a96b;
+        }
+
+        #s08 .s08-member-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 11px;
+            font-weight: 300;
+            color: #7c907a;
+            letter-spacing: 2.5px;
+            margin-bottom: 4px;
+        }
+
+        #s08 .s08-member-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #f7f8f2;
+            letter-spacing: 3px;
+            margin: 0 0 8px;
+        }
+
+        #s08 .s08-divider {
+            width: 24px;
+            height: 1px;
+            background: #87a96b;
+            margin-bottom: 10px;
+            opacity: 0.6;
+        }
+
+        #s08 .s08-member-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #7c907a;
+            line-height: 2;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* 黑卡專屬：badge */
+        #s08 .s08-elite-badge {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 10px;
+            color: #2e4639;
+            background: #87a96b;
+            letter-spacing: 2px;
+            padding: 2px 10px;
+            margin-bottom: 8px;
+        }
+
+        /* ── s09 圖片遮罩（從右往左，融入米白背景） ── */
+        #s09 .s09-img-col {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: auto;
+            background-image: url('https://images.pexels.com/photos/18732605/pexels-photo-18732605.jpeg');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #s09 .s09-img-col::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to left,
+                    rgba(234, 240, 227, 0.0) 55%,
+                    rgba(234, 240, 227, 0.92) 100%);
+            pointer-events: none;
+        }
+
+        /* ── s09 文字欄 ── */
+        #s09 .s09-text {
+            padding: 4rem 2rem 4rem 0;
+        }
+
+        #s09 .s09-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s09 .s09-headline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2e4639;
+            letter-spacing: 4px;
+            margin: 0 0 10px;
+        }
+
+        #s09 .s09-divider {
+            width: 32px;
+            height: 1px;
+            background: #87a96b;
+            margin-bottom: 2rem;
+        }
+
+        /* ── dl 規格表 ── */
+        #s09 .s09-dl {
+            border-top: 1px solid #d8e2cf;
+        }
+
+        #s09 .s09-dl .row {
+            border-bottom: 1px solid #d8e2cf;
+            padding: 0.75rem 0;
+            margin: 0;
+            align-items: baseline;
+        }
+
+        #s09 .s09-dt {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: #87a96b;
+            letter-spacing: 2.5px;
+        }
+
+        #s09 .s09-dd {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12.5px;
+            font-weight: 300;
+            color: #45584a;
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* ── s10 區塊標題 ── */
+        #s10 .s10-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s10 .s10-main-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #f7f8f2;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+        }
+
+        #s10 .s10-main-divider {
+            width: 40px;
+            height: 1px;
+            background: #87a96b;
+            margin: 0 auto 3.5rem;
+        }
+
+        /* ── 地圖 ── */
+        #s10 .s10-map {
+            border: 1px solid rgba(135, 169, 107, 0.3);
+            display: block;
+            filter: saturate(0.65) brightness(0.95);
+        }
+
+        /* ── 右欄小標 ── */
+        #s10 .s10-form-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        #s10 .s10-form-divider {
+            width: 28px;
+            height: 1px;
+            background: #87a96b;
+            opacity: 0.5;
+            margin-bottom: 1.5rem;
+        }
+
+        #s10 .s10-form-note {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 11.5px;
+            font-weight: 300;
+            color: #7c907a;
+            letter-spacing: 0.5px;
+            line-height: 1.9;
+            margin-bottom: 1.75rem;
+        }
+
+        /* ── input 覆寫 ── */
+        #s10 .cha-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(135, 169, 107, 0.5);
+            border-radius: 0;
+            color: #f7f8f2;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            padding: 10px 2px;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        #s10 .cha-input:focus {
+            border-bottom-color: #87a96b;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        #s10 .cha-input::placeholder {
+            color: #45584a;
+            font-size: 12px;
+        }
+
+        /* ── field wrapper ── */
+        #s10 .s10-field {
+            margin-bottom: 1.25rem;
+        }
+
+        #s10 .s10-field-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            color: #7c907a;
+            letter-spacing: 2.5px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ── checkbox ── */
+        #s10 .s10-check-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(135, 169, 107, 0.15);
+            margin-bottom: 1.5rem;
+        }
+
+        #s10 .cha-check {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #87a96b;
+            background: transparent;
+            appearance: none;
+            -webkit-appearance: none;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        #s10 .cha-check:checked {
+            background: #87a96b;
+        }
+
+        #s10 .cha-check:checked::after {
+            content: '✓';
+            position: absolute;
+            top: -1px;
+            left: 1px;
+            font-size: 11px;
+            color: #2e4639;
+        }
+
+        #s10 .cha-check-label {
+            font-size: 11px;
+            color: #7c907a;
+            letter-spacing: 1px;
+            font-weight: 300;
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+        }
+
+        /* ── 深綠遮罩 ── */
+        #s11::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(46, 70, 57, 0.82);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #s11 .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── badge ── */
+        #s11 .s11-badge {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 11px;
+            font-weight: 300;
+            color: #2e4639;
+            background: #87a96b;
+            letter-spacing: 3px;
+            padding: 3px 14px;
+            margin-bottom: 14px;
+        }
+
+        /* ── 主標題 ── */
+        #s11 .s11-headline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #f7f8f2;
+            letter-spacing: 6px;
+            margin: 0 0 10px;
+        }
+
+        #s11 .s11-sub-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 0;
+        }
+
+        #s11 .s11-divider {
+            width: 40px;
+            height: 1px;
+            background: #87a96b;
+            margin: 20px 0 28px;
+        }
+
+        /* ── 項目標題 ── */
+        #s11 .s11-item-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: #87a96b;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 2px solid #87a96b;
+        }
+
+        /* ── 項目內文 ── */
+        #s11 .s11-item-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12.5px;
+            font-weight: 300;
+            color: #b4c5ad;
+            line-height: 2.1;
+            letter-spacing: 0.5px;
+            padding-left: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── 分隔線 ── */
+        #s11 .s11-item-divider {
+            border: none;
+            border-top: 1px solid rgba(135, 169, 107, 0.12);
+            margin: 0 0 1.5rem;
+        }
+
+        /* ── s12 footer ── */
+        #s12 {
+            background: #243a2e;
+            border-top: 1px solid #3c5a49;
+        }
+
+        #s12 .s12-brand {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #f7f8f2;
+            letter-spacing: 5px;
+        }
+
+        #s12 .s12-brand-en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 11px;
+            font-weight: 300;
+            color: #87a96b;
+            letter-spacing: 3px;
+        }
+
+        #s12 .s12-divider {
+            border: none;
+            border-top: 1px solid #3c5a49;
+            margin: 1.25rem 0;
+        }
+
+        #s12 .s12-nav-link {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 11px;
+            font-weight: 300;
+            color: #45584a;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        #s12 .s12-nav-link:hover {
+            color: #87a96b;
+        }
+
+        #s12 .s12-copyright {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            font-weight: 300;
+            color: #4c6a58;
+            letter-spacing: 1.5px;
+        }
+
+        #s12 .s12-social a {
+            color: #4c6a58;
+            font-size: 14px;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        #s12 .s12-social a:hover {
+            color: #87a96b;
+        }
+
+        /* 手機版 */
+        @media(max-width:768px) {
+            .s05-timeline-section::before {
+                left: 0px;
+            }
+
+            .s05-timeline-pointer::before {
+                left: 5px;
+                transform: none;
+            }
+
+            .s05-step-text,
+            .s05-img {
+                margin-left: 40px;
+            }
+
+            /* ── s07 手機版修正 ── */
+            #s07 {
+                min-height: auto;
+                /* 取消固定最小高度，讓內容自撐 */
+            }
+
+            #s07 .s07-img-col {
+                position: static !important;
+                /* 取消 absolute，回到文件流 */
+                height: 260px;
+                /* 給固定高度當圖片區塊 */
+                width: 100%;
+            }
+
+            #s07 .s07-img-col::after {
+                /* 手機版改為下方漸層，融入下方背景色 */
+                background: linear-gradient(to bottom,
+                        rgba(234, 240, 227, 0.0) 55%,
+                        rgba(234, 240, 227, 0.95) 100%);
+            }
+
+            /* row 不再需要撐高，讓圖片區塊自然佔位 */
+            #s07>.row {
+                position: static;
+            }
+
+            #s07 .s07-text-col,
+            .s09-text-col {
+                padding: 2rem 1.5rem;
+                /* 縮小 padding 適應窄螢幕 */
+            }
+
+            /* 右欄不再 justify-content-end 推到右側，手機全寬顯示 */
+            #s07 .container .row {
+                justify-content: flex-start !important;
+            }
+
+            #s07 .col-md-7 {
+                width: 100%;
+                /* 手機版佔滿全寬 */
+            }
+
+            #s09 {
+                min-height: auto;
+            }
+
+            #s09 .s09-img-col {
+                position: static !important;
+                right: auto;
+                height: 240px;
+                width: 100%;
+            }
+
+            #s09 .s09-img-col::after {
+                background: linear-gradient(to bottom,
+                        rgba(234, 240, 227, 0.0) 55%,
+                        rgba(234, 240, 227, 0.95) 100%);
+            }
+
+            #s09 .s09-text {
+                padding: 2rem 1.5rem;
+            }
+        }
