@@ -1575,3 +1575,458 @@ body {
         padding: 2rem 1.5rem;
     }
 }
+
+
+/* =====================================================
+   ★ 2026-07 大茗（damingtea.com.tw）風格微調 新增樣式
+   以下全部為「附加」，未改動上方任何原有規則
+   新增五件事：
+   1. Hero 文字疊層（直書日文 + 主標 + since 徽章）
+   2. Hero SCROLL 捲動指示
+   3. sProducts 推薦飲品卡片區
+   4. sNews 最新消息（大日期數字）
+   5. sMarquee 日文跑馬燈 ＋ pagetop 按鈕
+   ===================================================== */
+
+/* ── 1. Hero 文字疊層 ── */
+.cha-hero-caption {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: clamp(1.5rem, 8vw, 8rem);
+    pointer-events: none;
+    /* 不擋 carousel 控制按鈕與 indicators 的點擊 */
+}
+
+/* 直書日文裝飾（大茗招牌手法：writing-mode 直排） */
+.cha-hero-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(247, 248, 242, 0.85);
+    letter-spacing: 8px;
+    line-height: 1;
+    margin: 0 2.5rem 0 0;
+    height: 320px;
+    border-left: 1px solid rgba(135, 169, 107, 0.5);
+    padding-left: 14px;
+    text-shadow: 0 1px 8px rgba(46, 70, 57, 0.5);
+}
+
+.cha-hero-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(12px, 1.2vw, 15px);
+    font-weight: 300;
+    color: #9dbd82;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 6px rgba(46, 70, 57, 0.6);
+}
+
+.cha-hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 4.2vw, 52px);
+    font-weight: 600;
+    color: #f7f8f2;
+    letter-spacing: clamp(4px, 0.8vw, 10px);
+    line-height: 1.4;
+    margin: 0 0 18px;
+    text-shadow: 0 2px 14px rgba(46, 70, 57, 0.55);
+}
+
+/* since 徽章：仿大茗「since 1994 / From Taiwan」小字資訊 */
+.cha-hero-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 300;
+    color: #f7f8f2;
+    letter-spacing: 3px;
+    border: 1px solid rgba(135, 169, 107, 0.6);
+    padding: 5px 18px;
+    background: rgba(46, 70, 57, 0.35);
+    backdrop-filter: blur(2px);
+    margin: 0;
+}
+
+.cha-hero-badge span {
+    color: #87a96b;
+    margin: 0 4px;
+}
+
+/* ── 2. SCROLL 捲動指示 ── */
+.cha-scroll-hint {
+    position: absolute;
+    left: clamp(1rem, 3vw, 2.5rem);
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.cha-scroll-hint span {
+    writing-mode: vertical-rl;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(247, 248, 242, 0.8);
+    letter-spacing: 4px;
+}
+
+/* 細線：內部亮條反覆往下流動 */
+.cha-scroll-line {
+    width: 1px;
+    height: 64px;
+    background: rgba(247, 248, 242, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.cha-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #87a96b;
+    animation: chaScrollFlow 1.8s ease-in-out infinite;
+}
+
+@keyframes chaScrollFlow {
+    0% {
+        top: -50%;
+    }
+
+    100% {
+        top: 110%;
+    }
+}
+
+/* ── 3. sProducts 推薦飲品 ── */
+#sProducts {
+    background: #f7f8f2;
+    padding: 5rem 0;
+}
+
+/* 標題列：左標題 + 右「查看全部」，仿大茗版頭布局 */
+#sProducts .sp-head,
+#sNews .sn-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#sProducts .sp-eyebrow,
+#sNews .sn-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 300;
+    color: #87a96b;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+#sProducts .sp-main-title,
+#sNews .sn-main-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #2e4639;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+}
+
+#sProducts .sp-more-link,
+#sNews .sn-more-link {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #87a96b;
+    letter-spacing: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(135, 169, 107, 0.4);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+#sProducts .sp-more-link:hover,
+#sNews .sn-more-link:hover {
+    color: #2e4639;
+    border-color: #2e4639;
+}
+
+#sProducts .sp-main-divider,
+#sNews .sn-main-divider {
+    width: 100%;
+    height: 1px;
+    background: #d8e2cf;
+    margin: 1.25rem 0 2.5rem;
+}
+
+/* 商品卡：直式構圖，hover 浮起 + 圖片微放大 */
+#sProducts .sp-card {
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+#sProducts .sp-card:hover {
+    transform: translateY(-6px);
+}
+
+#sProducts .sp-img-wrap {
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    /* 仿大茗直式商品圖比例 */
+    border: 1px solid #d8e2cf;
+    margin-bottom: 12px;
+}
+
+#sProducts .sp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92) brightness(1.02);
+    transition: transform 0.4s;
+}
+
+#sProducts .sp-card:hover .sp-img {
+    transform: scale(1.05);
+}
+
+/* 系列標籤：仿大茗「雲朵奶蓋系列」小標 */
+#sProducts .sp-series {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #87a96b;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    padding-left: 8px;
+    border-left: 2px solid #87a96b;
+}
+
+#sProducts .sp-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e4639;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+/* ── 4. sNews 最新消息 ── */
+#sNews {
+    background: #eaf0e3;
+    padding: 5rem 0;
+}
+
+/* 消息卡：大日期數字在左（仿大茗 05／06 疊排），內文在右 */
+#sNews .sn-card {
+    display: flex;
+    gap: 1.25rem;
+    text-decoration: none;
+    background: #f7f8f2;
+    border: 1px solid #d8e2cf;
+    padding: 1.5rem 1.4rem;
+    height: 100%;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+#sNews .sn-card:hover {
+    transform: translateY(-4px);
+    border-color: #87a96b;
+}
+
+#sNews .sn-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+#sNews .sn-date-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: #2e4639;
+}
+
+#sNews .sn-date-month {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #7c907a;
+    letter-spacing: 1px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #87a96b;
+}
+
+#sNews .sn-tag {
+    display: inline-block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #2e4639;
+    background: rgba(135, 169, 107, 0.25);
+    letter-spacing: 2px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+}
+
+#sNews .sn-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2e4639;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+    transition: color 0.2s;
+}
+
+#sNews .sn-card:hover .sn-title {
+    color: #87a96b;
+}
+
+#sNews .sn-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #7c907a;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* ── 5. sMarquee 日文跑馬燈 ── */
+#sMarquee {
+    background: #2e4639;
+    border-top: 1px solid #3c5a49;
+    border-bottom: 1px solid #3c5a49;
+    padding: 1.1rem 0;
+    overflow: hidden;
+    /* 超出的文字裁掉，只留視窗內流動 */
+}
+
+.cha-marquee-track {
+    display: flex;
+    width: max-content;
+    /* 讓兩份文字並排成一長條 */
+    animation: chaMarquee 36s linear infinite;
+}
+
+/* 兩份相同內容各佔 50%，位移 -50% 後剛好無縫接回起點 */
+@keyframes chaMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.cha-marquee-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(135, 169, 107, 0.75);
+    letter-spacing: 6px;
+    white-space: nowrap;
+    padding-right: 4rem;
+}
+
+/* ── pagetop 按鈕 ── */
+.cha-pagetop {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1040;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    background: rgba(46, 70, 57, 0.9);
+    border: 1px solid #87a96b;
+    border-radius: 0;
+    color: #87a96b;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+}
+
+.cha-pagetop i {
+    font-size: 13px;
+}
+
+.cha-pagetop.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cha-pagetop:hover {
+    background: #2e4639;
+    color: #9dbd82;
+}
+
+/* ── 新增區塊的 reduced-motion 與手機版 ── */
+@media (prefers-reduced-motion: reduce) {
+
+    .cha-marquee-track,
+    .cha-scroll-line::after {
+        animation: none !important;
+    }
+}
+
+@media(max-width:768px) {
+
+    /* 直書日文在窄螢幕太佔寬，隱藏保留主標即可 */
+    .cha-hero-vertical {
+        display: none;
+    }
+
+    /* SCROLL 指示避開 carousel indicators */
+    .cha-scroll-hint {
+        display: none;
+    }
+
+    /* 標題列改為上下堆疊 */
+    #sProducts .sp-head,
+    #sNews .sn-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    /* 跑馬燈字級與間距縮小 */
+    .cha-marquee-text {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+}

@@ -180,7 +180,8 @@
     </div>
 
 
-    <!-- section 3 | Hero carousel ── 動畫：fadeIn（純淡入，不與 slide 位移打架） -->
+    <!-- section 3 | Hero carousel ── 動畫：fadeIn（純淡入，不與 slide 位移打架）
+         ★ 大茗風格微調：新增 hero 文字疊層（直書日文 + 主標語 + since 徽章）與 SCROLL 指示 -->
     <section id="s03">
         <div id="carouselExampleIndicators" class="carousel slide cha-carousel wow animate__fadeIn"
             data-bs-ride="carousel" data-wow-duration="1.4s">
@@ -206,6 +207,22 @@
                 <div class="carousel-item"
                     style="background-image: url(https://images.pexels.com/photos/8004570/pexels-photo-8004570.jpeg); height: 95vh; background-position: center; background-size: cover;">
                 </div>
+            </div>
+
+            <!-- ★ 新增：hero 文字疊層（仿大茗：直書日文裝飾 + 中文主標 + since 徽章） -->
+            <div class="cha-hero-caption">
+                <p class="cha-hero-vertical" aria-hidden="true">一杯のお茶に、心を込めて。</p>
+                <div class="cha-hero-main">
+                    <p class="cha-hero-en">Handcrafted Tea — Chadoya</p>
+                    <h1 class="cha-hero-title">一葉知茶，職人本位</h1>
+                    <p class="cha-hero-badge">since 2026 <span>／</span> From Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <!-- ★ 新增：SCROLL 指示（仿大茗左下角捲動提示） -->
+            <div class="cha-scroll-hint" aria-hidden="true">
+                <span>SCROLL</span>
+                <div class="cha-scroll-line"></div>
             </div>
 
             <!-- 控制按鈕 -->
@@ -261,6 +278,160 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ★ 新增 section | sProducts 推薦飲品 ──
+         仿大茗「Recommended drinks／每一口，都是經典」：
+         系列標籤 + 品名 + 直式商品卡，hover 浮起
+         動畫：卡片 fadeInUp 階梯延遲（wow 掛外層 col，不掛 .sp-card，避免 hover transform 被吃掉） -->
+    <section id="sProducts">
+        <div class="container">
+
+            <!-- 區塊主標（沿用全站標題節奏，加上大茗式「查看全部」右上連結） -->
+            <div class="sp-head wow animate__fadeInUp">
+                <div>
+                    <p class="sp-eyebrow">Recommended Drinks</p>
+                    <h2 class="sp-main-title">每一杯，都是本位</h2>
+                </div>
+                <a href="#" class="sp-more-link">查看全部 <i class="fa-solid fa-arrow-right-long ms-1"
+                        aria-hidden="true"></i></a>
+            </div>
+            <div class="sp-main-divider"></div>
+
+            <div class="row g-4">
+                <!-- 品項 01 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80"
+                                alt="宇治抹茶鮮乳" class="sp-img">
+                        </div>
+                        <p class="sp-series">雲霧奶蓋系列</p>
+                        <h3 class="sp-name">宇治抹茶鮮乳</h3>
+                    </div>
+                </div>
+                <!-- 品項 02 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp" data-wow-delay="0.08s">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80"
+                                alt="梨山高冷烏龍" class="sp-img">
+                        </div>
+                        <p class="sp-series">嚴選茗茶系列</p>
+                        <h3 class="sp-name">梨山高冷烏龍</h3>
+                    </div>
+                </div>
+                <!-- 品項 03 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp" data-wow-delay="0.16s">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80"
+                                alt="抹茶拿鐵" class="sp-img">
+                        </div>
+                        <p class="sp-series">職人手作系列</p>
+                        <h3 class="sp-name">石臼抹茶拿鐵</h3>
+                    </div>
+                </div>
+                <!-- 品項 04 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp" data-wow-delay="0.24s">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600&q=80"
+                                alt="日月潭紅玉" class="sp-img">
+                        </div>
+                        <p class="sp-series">嚴選茗茶系列</p>
+                        <h3 class="sp-name">日月潭紅玉 18 號</h3>
+                    </div>
+                </div>
+                <!-- 品項 05 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp" data-wow-delay="0.32s">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                                alt="焙茶鮮奶" class="sp-img">
+                        </div>
+                        <p class="sp-series">牧場直送系列</p>
+                        <h3 class="sp-name">京都焙茶鮮奶</h3>
+                    </div>
+                </div>
+                <!-- 品項 06 -->
+                <div class="col-6 col-md-4 col-lg-2 wow animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="sp-card">
+                        <div class="sp-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80"
+                                alt="季節限定茶品" class="sp-img">
+                        </div>
+                        <p class="sp-series">期間限定系列</p>
+                        <h3 class="sp-name">初夏白桃玉露</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ★ 新增 section | sNews 最新消息 ──
+         仿大茗「NEWS／最新消息」：大日期數字 + 分類標籤 + 標題 + 摘要
+         動畫：三欄 fadeInUp 階梯延遲 -->
+    <section id="sNews">
+        <div class="container">
+
+            <div class="sn-head wow animate__fadeInUp">
+                <div>
+                    <p class="sn-eyebrow">News</p>
+                    <h2 class="sn-main-title">最新消息</h2>
+                </div>
+                <a href="#" class="sn-more-link">查看更多 <i class="fa-solid fa-arrow-right-long ms-1"
+                        aria-hidden="true"></i></a>
+            </div>
+            <div class="sn-main-divider"></div>
+
+            <div class="row g-4">
+                <!-- 消息 01 -->
+                <div class="col-md-4 wow animate__fadeInUp">
+                    <a href="#" class="sn-card">
+                        <div class="sn-date">
+                            <span class="sn-date-day">01</span>
+                            <span class="sn-date-month">07</span>
+                        </div>
+                        <div class="sn-body">
+                            <p class="sn-tag">新品上市</p>
+                            <h3 class="sn-title">初夏白桃玉露 限定登場</h3>
+                            <p class="sn-text">以低溫慢萃玉露為底，佐入台灣在地白桃果肉。每日限量五十杯，售完為止。</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 消息 02 -->
+                <div class="col-md-4 wow animate__fadeInUp" data-wow-delay="0.1s">
+                    <a href="#" class="sn-card">
+                        <div class="sn-date">
+                            <span class="sn-date-day">18</span>
+                            <span class="sn-date-month">06</span>
+                        </div>
+                        <div class="sn-body">
+                            <p class="sn-tag">訊息公告</p>
+                            <h3 class="sn-title">會員制度全新上線</h3>
+                            <p class="sn-text">一般、金卡、VIP 至黑卡四級會員制度正式啟用，消費累積茶葉積分，權益詳見會員專區。</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- 消息 03 -->
+                <div class="col-md-4 wow animate__fadeInUp" data-wow-delay="0.2s">
+                    <a href="#" class="sn-card">
+                        <div class="sn-date">
+                            <span class="sn-date-day">05</span>
+                            <span class="sn-date-month">06</span>
+                        </div>
+                        <div class="sn-body">
+                            <p class="sn-tag">活動預告</p>
+                            <h3 class="sn-title">職人手沖體驗會 開放報名</h3>
+                            <p class="sn-text">七月第三週週末舉辦，由主理職人親自示範宇治傳統沖泡工序，金卡以上會員優先預約。</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -409,6 +580,18 @@
             </div>
         </div>
     </section>
+
+
+    <!-- ★ 新增 section | sMarquee 日文跑馬燈文字帶 ──
+         仿大茗首頁的橫向流動日文字幕，作為 s06 與 s07 之間的呼吸帶
+         注意：跑馬燈本身用 transform 動畫，不可再掛 wow（transform 會互相覆蓋）
+         內容重複兩份做無縫循環，第二份 aria-hidden 避免螢幕閱讀器重複朗讀 -->
+    <div id="sMarquee" aria-label="茶道屋品牌標語">
+        <div class="cha-marquee-track">
+            <span class="cha-marquee-text">一杯のお茶に、心を込めて。伝統の技と現代の感性が出会う場所　—　茶道屋　CHADOYA　—　</span>
+            <span class="cha-marquee-text" aria-hidden="true">一杯のお茶に、心を込めて。伝統の技と現代の感性が出会う場所　—　茶道屋　CHADOYA　—　</span>
+        </div>
+    </div>
 
 
     <!-- section 7 | 服務項目 ── 動畫：absolute 圖片欄只用 fadeIn（無 transform，不影響定位） -->
@@ -756,7 +939,8 @@
     </section>
 
 
-    <!-- section 12 | Footer ── 動畫：三欄 fadeInUp 依序 0 / 0.1 / 0.2s -->
+    <!-- section 12 | Footer ── 動畫：三欄 fadeInUp 依序 0 / 0.1 / 0.2s
+         ★ 微調：導覽列新增「推薦飲品」「最新消息」兩個頁內連結 -->
     <section id="s12">
         <footer class="py-5">
             <div class="container">
@@ -775,6 +959,8 @@
                     <div class="col-md-4 text-center d-none d-md-block wow animate__fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex justify-content-center gap-4 flex-wrap">
                             <a href="#s03" class="s12-nav-link">首頁</a>
+                            <a href="#sProducts" class="s12-nav-link">推薦飲品</a>
+                            <a href="#sNews" class="s12-nav-link">最新消息</a>
                             <a href="#s07" class="s12-nav-link">品牌故事</a>
                             <a href="#s05" class="s12-nav-link">如何點餐</a>
                             <a href="#s08" class="s12-nav-link">會員等級</a>
@@ -808,6 +994,13 @@
             </div>
         </footer>
     </section>
+
+
+    <!-- ★ 新增：page top 回到頂部按鈕（仿大茗右下角固定按鈕） -->
+    <button type="button" id="pageTopBtn" class="cha-pagetop" aria-label="回到頁面頂部">
+        <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+        <span>TOP</span>
+    </button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -849,6 +1042,20 @@
 
         const els = document.querySelectorAll('.s04-stat-number01, .s04-stat-number02, .s04-stat-number03, .s04-stat-number04')
         els.forEach(el => IO.observe(el))
+    </script>
+
+    <script>
+        // ★ 新增：page top 按鈕邏輯
+        // 捲動超過一個視窗高度才顯示；點擊平滑回頂
+        const pageTopBtn = document.getElementById('pageTopBtn')
+
+        window.addEventListener('scroll', () => {
+            pageTopBtn.classList.toggle('is-show', window.scrollY > window.innerHeight)
+        }, { passive: true })
+
+        pageTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        })
     </script>
 </body>
 
