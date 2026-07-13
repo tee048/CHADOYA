@@ -406,7 +406,7 @@ body {
 
 /* ── Footer ── */
 #rigisterModal .modal-footer {
-    background: #2e4639;
+    background: #586860;
     border-top: 1px solid #3c5a49;
     padding: 0.85rem 1.5rem;
     gap: 8px;
@@ -1436,7 +1436,7 @@ body {
 
 /* ── s12 footer ── */
 #s12 {
-    background: #243a2e;
+    background: #d8dfc5;
     border-top: 1px solid #3c5a49;
 }
 
@@ -1444,7 +1444,7 @@ body {
     font-family: 'Noto Serif JP', serif;
     font-size: 16px;
     font-weight: 400;
-    color: #f7f8f2;
+    color: #585c46;
     letter-spacing: 5px;
 }
 
